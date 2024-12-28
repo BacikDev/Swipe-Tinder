@@ -12,7 +12,6 @@ function startDrag (event){
 
     //Recupera la posición del article (card)
     const actualCard = event.target.closest('article')
-
     if(!actualCard) return
 
     //Recupera la posición inicial del click o touch
@@ -38,12 +37,13 @@ function startDrag (event){
         actualCard.style.transform = `translateX(${pullDeltaX}px) rotate(${deg}deg)`
         actualCard.style.cursor = 'grabbing'
 
+
         const opacity = Math.abs(pullDeltaX) / 100
         const isRight = pullDeltaX > 0
 
         const choiceEl = isRight
         ? actualCard.querySelector('.choice.like')
-        : actualCard.querySelector('.choice.nope')
+        : actualCard.querySelector('.choice.nou')
 
         choiceEl.style.opacity = opacity
     }
